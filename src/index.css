@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-violet-primary: #7C3AED;
+  --color-violet-secondary: #8B5CF6;
+  --color-violet-accent: #A78BFA;
+  --color-violet-light: #DDD6FE;
+  --color-dark-bg: #0F172A;
+  --color-light-bg: #FFFFFF;
+  --color-dark-text: #FFFFFF;
+  --color-light-text: #0F172A;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 antialiased;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+  
+  .dark body {
+    @apply bg-slate-900 text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-slate-200/50;
+  }
+  
+  .dark .glass {
+    @apply bg-slate-900/50 backdrop-blur-md border border-slate-700/50 shadow-2xl shadow-black/50;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-primary to-violet-accent;
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-violet-primary to-violet-secondary;
+  }
+}
