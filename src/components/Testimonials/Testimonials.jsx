@@ -69,7 +69,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-24 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2 

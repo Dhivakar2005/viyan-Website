@@ -13,6 +13,7 @@
   --color-light-text: #0F172A;
   
   --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
 }
 
 @layer base {

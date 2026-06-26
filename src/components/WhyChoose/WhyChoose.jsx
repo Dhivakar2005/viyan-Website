@@ -37,10 +37,10 @@ const reasons = [
 
 const WhyChoose = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative h-screen flex items-center justify-center overflow-hidden py-4 lg:py-0">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
         
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           
           {/* Text Section */}
           <div className="w-full lg:w-1/3">
@@ -49,35 +49,22 @@ const WhyChoose = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-sm font-bold tracking-wider text-violet-primary uppercase mb-3">
+              <h2 className="text-sm font-bold tracking-wider text-violet-primary uppercase mb-2">
                 Why Choose Viyan
               </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
                 Your Partner in <span className="text-gradient">Digital Excellence</span>
               </h3>
-              <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+              <p className="text-base text-slate-600 dark:text-slate-300 mb-6">
                 We don't just build websites; we engineer digital experiences designed to scale, convert, and dominate your industry.
               </p>
               
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center text-violet-primary dark:text-violet-light">
-                    <span className="font-bold text-xl">10+</span>
-                  </div>
-                  <div className="text-slate-700 dark:text-slate-200 font-medium">Years Experience</div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center text-violet-primary dark:text-violet-light">
-                    <span className="font-bold text-xl">200+</span>
-                  </div>
-                  <div className="text-slate-700 dark:text-slate-200 font-medium">Projects Delivered</div>
-                </div>
-              </div>
+
             </motion.div>
           </div>
 
           {/* Cards Grid */}
-          <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {reasons.map((reason, index) => (
               <motion.div
                 key={reason.title}
@@ -85,15 +72,15 @@ const WhyChoose = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glass p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                className="glass p-5 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors flex flex-col justify-center"
               >
-                <div className="w-12 h-12 rounded-xl bg-violet-100 dark:bg-slate-800 flex items-center justify-center text-violet-primary mb-4">
+                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-slate-800 flex items-center justify-center text-violet-primary mb-3">
                   {reason.icon}
                 </div>
-                <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                <h4 className="text-base font-bold text-slate-900 dark:text-white mb-1.5">
                   {reason.title}
                 </h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                   {reason.description}
                 </p>
               </motion.div>

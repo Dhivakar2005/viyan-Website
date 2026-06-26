@@ -1,23 +1,18 @@
 import React from 'react';
-import { Sparkles, MessageCircle, Briefcase, Code, Camera, ArrowRight } from 'lucide-react';
+import { MessageCircle, Briefcase, Code, Camera, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 py-16 border-t border-slate-200 dark:border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-6 group">
-              <div className="p-2 bg-gradient-primary rounded-xl text-white">
-                <Sparkles size={20} />
-              </div>
-              <span className="font-bold text-2xl tracking-tight text-slate-900 dark:text-white">
-                Viyan
-              </span>
+              <img src="/logo.png" alt="Viyan Logo" className="h-16 w-auto mix-blend-screen" />
             </a>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
               Empowering businesses with modern technology, AI solutions, and digital growth strategies. To become the most trusted digital transformation partner for businesses worldwide.
