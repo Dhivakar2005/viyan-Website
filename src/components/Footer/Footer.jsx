@@ -11,8 +11,16 @@ const Footer = () => {
           
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2 mb-6 group">
-              <img src="/logo.png" alt="Viyan Logo" className="h-16 w-auto mix-blend-screen" />
+            <a href="#home" className="flex items-center gap-3 mb-6 group">
+              <img src="/logo.png" alt="Viyan Logo" className="h-16 w-auto mix-blend-screen group-hover:scale-105 transition-transform" />
+              <div className="flex flex-col justify-center items-center w-fit">
+                <span className="text-3xl md:text-4xl font-semibold font-sans leading-none text-slate-900 dark:text-white uppercase tracking-[0.3em] md:tracking-[0.4em] text-center translate-x-[0.15em] md:translate-x-[0.2em]">VIYAN</span>
+                <div className="flex items-center justify-center gap-2 mt-2 w-full">
+                  <div className="h-[2px] w-3 md:w-4 bg-yellow-500 rounded-full"></div>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-[0.45em] md:tracking-[0.55em] text-violet-primary uppercase text-center translate-x-[0.25em]">technologies</span>
+                  <div className="h-[2px] w-3 md:w-4 bg-yellow-500 rounded-full"></div>
+                </div>
+              </div>
             </a>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
               Empowering businesses with modern technology, AI solutions, and digital growth strategies. To become the most trusted digital transformation partner for businesses worldwide.

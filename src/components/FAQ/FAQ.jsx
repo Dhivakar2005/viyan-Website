@@ -22,26 +22,6 @@ const faqs = [
   {
     question: "Can you redesign my existing website without losing SEO traffic?",
     answer: "Absolutely. We follow strict SEO migration protocols, including proper 301 redirects, URL structure mapping, and technical audits to ensure your existing search rankings are preserved and improved."
-  },
-  {
-    question: "What technologies do you use for web development?",
-    answer: "We use modern, scalable technologies including React, Next.js, Vue.js, Node.js, and Tailwind CSS. We select the best tech stack based on your project's specific requirements."
-  },
-  {
-    question: "Are your pricing plans flexible?",
-    answer: "Yes, our pricing is tailored to the scope of your project. We offer modular solutions so you can start with the essentials and scale up as your business grows."
-  },
-  {
-    question: "How do we get started?",
-    answer: "Simply book a free consultation through our contact form. We'll discuss your goals, analyze your current digital presence, and propose a tailored strategy."
-  },
-  {
-    question: "Will my website be mobile-friendly?",
-    answer: "Yes. All our websites are built with a mobile-first approach, ensuring they look and perform flawlessly across all devices and screen sizes."
-  },
-  {
-    question: "Do I own the code and design after the project is done?",
-    answer: "Yes, upon final payment, you retain 100% ownership of the custom code, designs, and digital assets we create for your business."
   }
 ];
 

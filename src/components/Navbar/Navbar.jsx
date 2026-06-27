@@ -28,7 +28,7 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'glass py-2'
+          ? 'bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200 dark:border-slate-800 py-2'
           : 'bg-transparent py-4'
       )}
     >
@@ -36,8 +36,16 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#home" className="flex items-center gap-2 group">
+            <a href="#home" className="flex items-center gap-3 group">
               <img src="/logo.png" alt="Viyan Logo" className="h-16 w-auto mix-blend-screen group-hover:scale-105 transition-transform" />
+              <div className="flex flex-col justify-center items-center w-fit">
+                <span className="text-3xl md:text-4xl font-semibold font-sans leading-none text-slate-900 dark:text-white uppercase tracking-[0.3em] md:tracking-[0.4em] text-center translate-x-[0.15em] md:translate-x-[0.2em]">VIYAN</span>
+                <div className="flex items-center justify-center gap-2 mt-2 w-full">
+                  <div className="h-[2px] w-3 md:w-4 bg-yellow-500 rounded-full"></div>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-[0.45em] md:tracking-[0.55em] text-violet-primary uppercase text-center translate-x-[0.25em]">technologies</span>
+                  <div className="h-[2px] w-3 md:w-4 bg-yellow-500 rounded-full"></div>
+                </div>
+              </div>
             </a>
           </div>
 
@@ -70,7 +78,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden glass absolute top-full left-0 right-0 border-t border-slate-200 dark:border-slate-700">
+        <div className="md:hidden bg-white dark:bg-slate-900 absolute top-full left-0 right-0 border-b border-slate-200 dark:border-slate-800 shadow-lg">
           <div className="px-4 pt-2 pb-6 space-y-1">
             {navLinks.map((link) => (
               <a

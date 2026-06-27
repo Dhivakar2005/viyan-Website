@@ -14,7 +14,7 @@ const Hero = () => {
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 py-4 lg:py-0 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
-          
+
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -26,16 +26,16 @@ const Hero = () => {
               <Zap size={16} className="text-violet-primary" />
               <span>The Future of Digital Business</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-extrabold tracking-tight leading-[1.1] text-slate-900 dark:text-white max-w-2xl">
               Transform Your Business <br className="hidden sm:block" />
               with <span className="text-gradient">Our Digital Solutions</span>
             </h1>
-            
+
             <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
               We build high-performance websites, integrate AI solutions, and optimize your online presence to help your business scale faster.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 pt-2 w-full">
               <a
                 href="#contact"
@@ -77,7 +77,7 @@ const Hero = () => {
           >
             {/* Central glowing orb */}
             <div className="absolute w-64 h-64 bg-violet-primary/30 rounded-full blur-3xl animate-pulse" />
-            
+
             <div className="relative w-full max-w-md aspect-square">
               {/* Central Card */}
               <motion.div
@@ -117,7 +117,7 @@ const Hero = () => {
                 </div>
                 <p className="font-semibold text-sm text-slate-900 dark:text-white">SEO Growth</p>
               </motion.div>
-              
+
               {/* Floating Element 3 */}
               <motion.div
                 animate={{ y: [0, 15, 0] }}

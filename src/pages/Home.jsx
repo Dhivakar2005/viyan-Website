@@ -4,7 +4,6 @@ import React, { Suspense, lazy } from 'react';
 const Hero = lazy(() => import('../components/Hero/Hero'));
 const Services = lazy(() => import('../components/Services/Services'));
 const WhyChoose = lazy(() => import('../components/WhyChoose/WhyChoose'));
-const Process = lazy(() => import('../components/Process/Process'));
 const Portfolio = lazy(() => import('../components/Portfolio/Portfolio'));
 const Testimonials = lazy(() => import('../components/Testimonials/Testimonials'));
 const FAQ = lazy(() => import('../components/FAQ/FAQ'));
@@ -23,7 +22,6 @@ const Home = () => {
         <Hero />
         <Services />
         <WhyChoose />
-        <Process />
         <Portfolio />
         <Testimonials />
         <FAQ />
