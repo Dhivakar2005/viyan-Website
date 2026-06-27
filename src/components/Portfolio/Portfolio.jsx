@@ -68,8 +68,14 @@ const Portfolio = () => {
   const featuredProjects = projects.slice(4);
 
   return (
-    <section id="portfolio" className="py-24 relative">
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+    <section id="portfolio" className="py-24 relative bg-white dark:bg-white overflow-hidden">
+      {/* Top transition gradient from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-slate-50 dark:from-slate-900 to-transparent pointer-events-none z-10" />
+
+      {/* Bottom transition gradient to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-slate-50 dark:to-slate-900 pointer-events-none z-10" />
+
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -87,7 +93,7 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900"
             >
               Our Completed <span className="text-gradient">Projects</span>
             </motion.h3>
@@ -108,7 +114,7 @@ const Portfolio = () => {
         {/* ─── Recent Projects Section ─── */}
         <div className="mb-24">
           <div className="flex items-center gap-3 mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
               Recent Projects
             </h3>
             <span className="relative flex h-3.5 w-3.5">
@@ -125,7 +131,7 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative rounded-3xl overflow-hidden glass border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full"
+                className="group relative rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full"
               >
                 <div>
                   {/* Image Container */}
@@ -161,7 +167,7 @@ const Portfolio = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 bg-white dark:bg-slate-900">
+                  <div className="p-6">
                     <div className="text-sm text-violet-primary font-semibold mb-2">{project.industry}</div>
                     <h4 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-yellow-500 transition-colors">
                       {project.Link ? (
@@ -187,7 +193,7 @@ const Portfolio = () => {
 
         {/* ─── Featured Projects Section ─── */}
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
             Featured Projects
           </h3>
 
@@ -199,7 +205,7 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative rounded-3xl overflow-hidden glass border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full"
+                className="group relative rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full"
               >
                 <div>
                   {/* Image Container */}
@@ -235,7 +241,7 @@ const Portfolio = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 bg-white dark:bg-slate-900">
+                  <div className="p-6">
                     <div className="text-sm text-violet-primary font-semibold mb-2">{project.industry}</div>
                     <h4 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-yellow-500 transition-colors">
                       {project.Link ? (
