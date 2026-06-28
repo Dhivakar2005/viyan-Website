@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
+import Hero from '../components/Hero/Hero';
 
 // Lazy loading sections to improve performance
-const Hero = lazy(() => import('../components/Hero/Hero'));
 const Services = lazy(() => import('../components/Services/Services'));
 const WhyChoose = lazy(() => import('../components/WhyChoose/WhyChoose'));
 const Portfolio = lazy(() => import('../components/Portfolio/Portfolio'));

@@ -92,7 +92,7 @@ const Testimonials = () => {
         </div>
 
         <div 
-          className="relative max-w-4xl mx-auto"
+          className="relative max-w-5xl mx-auto"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >

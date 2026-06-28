@@ -9,7 +9,7 @@ const navLinks = [
   { name: 'SOLUTIONS', href: '/#solutions' },
   { name: 'PORTFOLIO', href: '/#portfolio' },
   { name: 'BLOG', href: '/blog' },
-  { name: 'ABOUT', href: '/#about' },
+  { name: 'ABOUT', href: '/about' },
   { name: 'CONTACT', href: '/#contact' },
 ];
 
@@ -24,6 +24,20 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavLinkClick = (e, href) => {
+    if (href.startsWith('/#')) {
+      const id = href.replace('/#', '');
+      if (window.location.pathname === '/' || window.location.pathname === '') {
+        const element = document.getElementById(id);
+        if (element) {
+          e.preventDefault();
+          window.history.pushState(null, null, `#${id}`);
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
 
   return (
     <nav
@@ -40,16 +54,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link
               to="/#home"
-              onClick={(e) => {
-                if (window.location.pathname === '/' || window.location.pathname === '') {
-                  const element = document.getElementById('home');
-                  if (element) {
-                    e.preventDefault();
-                    window.history.pushState(null, null, '#home');
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }
-              }}
+              onClick={(e) => handleNavLinkClick(e, '/#home')}
               className="flex items-center gap-3 group"
             >
               <img src="/logo.png" alt="Viyan Logo" className="h-12 md:h-14 w-auto mix-blend-screen group-hover:scale-105 transition-transform" />
@@ -70,6 +75,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
+                onClick={(e) => handleNavLinkClick(e, link.href)}
                 className="text-base font-semibold text-slate-900 hover:text-violet-primary dark:text-white dark:hover:text-violet-light transition-colors"
               >
                 {link.name}
@@ -99,7 +105,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  setIsOpen(false);
+                  handleNavLinkClick(e, link.href);
+                }}
                 className="block px-3 py-3 text-base font-medium text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg"
               >
                 {link.name}

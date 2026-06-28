@@ -1,8 +1,23 @@
 import React from 'react';
 import { MessageCircle, Briefcase, Code, Camera, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const handleFooterLinkClick = (e, href) => {
+    if (href.startsWith('/#')) {
+      const id = href.replace('/#', '');
+      if (window.location.pathname === '/' || window.location.pathname === '') {
+        const element = document.getElementById(id);
+        if (element) {
+          e.preventDefault();
+          window.history.pushState(null, null, `#${id}`);
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
 
   return (
     <footer className="bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 py-10 border-t border-slate-200 dark:border-slate-800">
@@ -11,7 +26,11 @@ const Footer = () => {
           
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <a href="#home" className="flex items-center gap-3 mb-6 group">
+            <Link 
+              to="/#home" 
+              onClick={(e) => handleFooterLinkClick(e, '/#home')}
+              className="flex items-center gap-3 mb-6 group"
+            >
               <img src="/logo.png" alt="Viyan Logo" className="h-16 w-auto mix-blend-screen group-hover:scale-105 transition-transform" />
               <div className="flex flex-col justify-center items-center w-fit">
                 <span className="text-3xl md:text-4xl font-semibold font-sans leading-none text-slate-900 dark:text-white uppercase tracking-[0.3em] md:tracking-[0.4em] text-center translate-x-[0.15em] md:translate-x-[0.2em]">VIYAN</span>
@@ -21,7 +40,7 @@ const Footer = () => {
                   <div className="h-[2px] w-3 md:w-4 bg-yellow-500 rounded-full"></div>
                 </div>
               </div>
-            </a>
+            </Link>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
               Empowering businesses with modern technology, AI solutions, and digital growth strategies. To become the most trusted digital transformation partner for businesses worldwide.
             </p>
@@ -45,11 +64,11 @@ const Footer = () => {
           <div>
             <h4 className="text-slate-900 dark:text-white font-bold mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="#home" className="hover:text-violet-primary transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-violet-primary transition-colors">About Us</a></li>
-              <li><a href="#portfolio" className="hover:text-violet-primary transition-colors">Portfolio</a></li>
-              <li><a href="#services" className="hover:text-violet-primary transition-colors">Services</a></li>
-              <li><a href="#contact" className="hover:text-violet-primary transition-colors">Contact</a></li>
+              <li><Link to="/#home" onClick={(e) => handleFooterLinkClick(e, '/#home')} className="hover:text-violet-primary transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-violet-primary transition-colors">About Us</Link></li>
+              <li><Link to="/#portfolio" onClick={(e) => handleFooterLinkClick(e, '/#portfolio')} className="hover:text-violet-primary transition-colors">Portfolio</Link></li>
+              <li><Link to="/#services" onClick={(e) => handleFooterLinkClick(e, '/#services')} className="hover:text-violet-primary transition-colors">Services</Link></li>
+              <li><Link to="/#contact" onClick={(e) => handleFooterLinkClick(e, '/#contact')} className="hover:text-violet-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -57,11 +76,11 @@ const Footer = () => {
           <div>
             <h4 className="text-slate-900 dark:text-white font-bold mb-6">Services</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="#services" className="hover:text-violet-primary transition-colors">Website Development</a></li>
-              <li><a href="#services" className="hover:text-violet-primary transition-colors">AI Integration</a></li>
-              <li><a href="#services" className="hover:text-violet-primary transition-colors">SEO Optimization</a></li>
-              <li><a href="#services" className="hover:text-violet-primary transition-colors">E-Commerce Solutions</a></li>
-              <li><a href="#services" className="hover:text-violet-primary transition-colors">Web Applications</a></li>
+              <li><Link to="/#services" onClick={(e) => handleFooterLinkClick(e, '/#services')} className="hover:text-violet-primary transition-colors">Website Development</Link></li>
+              <li><Link to="/#services" onClick={(e) => handleFooterLinkClick(e, '/#services')} className="hover:text-violet-primary transition-colors">AI Integration</Link></li>
+              <li><Link to="/#services" onClick={(e) => handleFooterLinkClick(e, '/#services')} className="hover:text-violet-primary transition-colors">SEO Optimization</Link></li>
+              <li><Link to="/#services" onClick={(e) => handleFooterLinkClick(e, '/#services')} className="hover:text-violet-primary transition-colors">E-Commerce Solutions</Link></li>
+              <li><Link to="/#services" onClick={(e) => handleFooterLinkClick(e, '/#services')} className="hover:text-violet-primary transition-colors">Web Applications</Link></li>
             </ul>
           </div>
 
@@ -90,8 +109,8 @@ const Footer = () => {
         <div className="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <p>&copy; {currentYear} Viyan. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
