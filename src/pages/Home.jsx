@@ -7,6 +7,7 @@ const WhyChoose = lazy(() => import('../components/WhyChoose/WhyChoose'));
 const Portfolio = lazy(() => import('../components/Portfolio/Portfolio'));
 const Testimonials = lazy(() => import('../components/Testimonials/Testimonials'));
 const FAQ = lazy(() => import('../components/FAQ/FAQ'));
+const Blog = lazy(() => import('../components/Blog/Blog'));
 const Contact = lazy(() => import('../components/Contact/Contact'));
 
 const LoadingFallback = () => (
@@ -24,6 +25,7 @@ const Home = () => {
         <WhyChoose />
         <Portfolio />
         <Testimonials />
+        <Blog />
         <FAQ />
         <Contact />
       </Suspense>

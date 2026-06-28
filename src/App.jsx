@@ -4,6 +4,8 @@ import Layout from './layouts/Layout';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
 import ScrollToHash from './components/common/ScrollToHash';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-of-service" element={<TermsOfService />} />
+          <Route path="blog" element={<BlogList />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
         </Route>
       </Routes>
     </BrowserRouter>
